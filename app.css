@@ -6,7 +6,7 @@ body {
     margin: 0;
     font-family: 'Nunito', sans-serif;
     background-color:rgb(251, 248, 241);
-    background-image: url(https://source.unsplash.com/random/1600×900/?city,landscape);
+    /* background-image: url(https://source.unsplash.com/random/1600×900/?city,landscape); */
 }
 
 .card {
@@ -22,15 +22,22 @@ body {
 }
 .searchBar {
     width: 100%;
-    background-color: rgb(251, 248, 241);
+    background-color: rgba(0, 0, 0,0.4);
+    color: white;
 }
 
 .weather {
-    margin-top: 4%;
+    margin-top: 7%;
+    visibility: visible;
 }
 
 .flex{
     display: flex;
     align-items: center;
-    width: 50%;
+    margin: 3%;
+}
+
+.loader {
+    margin-top: 5%;
+    display: none;
 }

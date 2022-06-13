@@ -15,13 +15,15 @@ let weather = {
         const { icon,description } =data.weather[0];
         const { temp, humidity} = data.main;
         const { speed } = data.wind;
-        console.log(name,icon,description,temp,humidity,speed);
+        document.body.style.backgroundImage = "url(https://source.unsplash.com/random/?" +name+")" ;
         document.querySelector(".city").innerHTML = "Weather in "+name;
         document.querySelector(".icon").src = "http://openweathermap.org/img/wn/" + icon + ".png";
         document.querySelector(".temp").innerHTML = temp +" °C";
         document.querySelector(".details").innerHTML = description;
         document.querySelector(".humidity").innerHTML ="Humidity : "+ humidity +" %";
         document.querySelector(".wind").innerHTML ="Wind Speed : "+ speed +" km/hr";
+        document.querySelector(".loader").style.display="none";
+        document.querySelector(".weather").style.visibility="visible";
     },
     search : function() {
         this.fetchWeather(document.querySelector(".searchBar").value);
@@ -31,9 +33,13 @@ let weather = {
 
 document.querySelector(".searchIcon").addEventListener("click",function(){
     weather.search();
+    document.querySelector(".weather").style.visibility="hidden";
+    document.querySelector(".loader").style.display="flex";
 });
 document.querySelector(".searchBar").addEventListener("keyup",function(e){
     if(e.key=="Enter"){
         weather.search();
+        document.querySelector(".weather").style.visibility="hidden";
+        document.querySelector(".loader").style.display="flex";
     }
 });
