@@ -6,7 +6,7 @@ body {
     margin: 0;
     font-family: 'Nunito', sans-serif;
     background-color:rgb(251, 248, 241);
-    /* background-image: url(https://source.unsplash.com/random/1600×900/?city,landscape); */
+    background-image: url(https://source.unsplash.com/random/1600×900/?city,landscape);
 }
 
 .card {
@@ -14,18 +14,23 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     width: 50%;
-    padding: 2%;
+    padding: 4% 2%;
 }   
 .search {
-    margin: 5% auto;
-    width: 80%;
-}
-.searchIcon {
-    
-}
-.searchIcon :hover {
-    cursor: pointer;
+    margin: auto;
+    width: 100%;
 }
 .searchBar {
+    width: 100%;
     background-color: rgb(251, 248, 241);
+}
+
+.weather {
+    margin-top: 4%;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    width: 50%;
 }

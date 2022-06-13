@@ -1,0 +1,39 @@
+let weather = {
+    apiKey : "549b0987e7e420b4606ff84114e85f9a",
+    fetchWeather: function(city){
+        console.log(city);
+        fetch(
+            "https://api.openweathermap.org/data/2.5/weather?q="+
+            city +
+            "&units=metric&appid="+
+            this.apiKey )
+            .then((response)=> response.json())
+            .then((data)=> this.displayWeather(data));
+    },
+    displayWeather : function(data){
+        const { name } =data;
+        const { icon,description } =data.weather[0];
+        const { temp, humidity} = data.main;
+        const { speed } = data.wind;
+        console.log(name,icon,description,temp,humidity,speed);
+        document.querySelector(".city").innerHTML = "Weather in "+name;
+        document.querySelector(".icon").src = "http://openweathermap.org/img/wn/" + icon + ".png";
+        document.querySelector(".temp").innerHTML = temp +" °C";
+        document.querySelector(".details").innerHTML = description;
+        document.querySelector(".humidity").innerHTML ="Humidity : "+ humidity +" %";
+        document.querySelector(".wind").innerHTML ="Wind Speed : "+ speed +" km/hr";
+    },
+    search : function() {
+        this.fetchWeather(document.querySelector(".searchBar").value);
+        console.log(document.querySelector(".searchBar").value);
+    }
+};
+
+document.querySelector(".searchIcon").addEventListener("click",function(){
+    weather.search();
+});
+document.querySelector(".searchBar").addEventListener("keyup",function(e){
+    if(e.key=="Enter"){
+        weather.search();
+    }
+});
