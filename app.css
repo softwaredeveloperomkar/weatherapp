@@ -25,7 +25,9 @@ body {
     background-color: rgba(0, 0, 0,0.4);
     color: white;
 }
-
+.toHide {
+    visibility: visible;
+}
 .weather {
     margin-top: 7%;
     visibility: visible;
