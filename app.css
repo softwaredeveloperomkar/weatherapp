@@ -7,7 +7,7 @@ body {
     margin: 0;
     font-family: 'Nunito', sans-serif;
     background-color:rgb(251, 248, 241);
-    background-image: url(https://source.unsplash.com/random/1600×800/?city,landscape);
+    background-image: url(https://source.unsplash.com/random/1000×500/?city,landscape);
     object-fit: cover;
 }
 
